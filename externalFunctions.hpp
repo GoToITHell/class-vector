@@ -4,7 +4,7 @@
 
 template<typename dataType>
 void selectionSort(Vector<dataType>& vector) {
-    size_t n = vector.size();
+    size_t n = vector.getSize();
     if (n <= 1) return;
 
     for (size_t i = 0; i < n - 1; i++) {
@@ -22,7 +22,7 @@ void selectionSort(Vector<dataType>& vector) {
 
 template<typename dataType, typename Compare>
 void selectionSort(Vector<dataType>& vector, Compare comp) {
-    size_t n = vector.size();
+    size_t n = vector.getSize();
     if (n <= 1) return;
 
     for (size_t i = 0; i < n - 1; ++i) {
@@ -47,9 +47,9 @@ void swap(Vector<dataType>& value1, Vector<dataType>& value2) noexcept {
 template<typename dataType>
 std::ostream& operator<<(std::ostream& output, const Vector<dataType>& vector) {
     output << "[";
-    for (size_t i = 0; i < vector.size(); i++) {
+    for (size_t i = 0; i < vector.getSize(); i++) {
         output << vector[i];
-        if (i < vector.size() - 1) output << ", ";
+        if (i < vector.getSize() - 1) output << ", ";
     }
     output << "]";
     return output;
